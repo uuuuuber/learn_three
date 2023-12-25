@@ -1,9 +1,7 @@
-import { WebGLRenderer } from 'three';
+import * as THREE from 'three';
 
 function createRenderer() {
-  const renderer = new WebGLRenderer({ antialias: true });
-
-  renderer.physicallyCorrectLights = true;
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
 
   return renderer;
 }

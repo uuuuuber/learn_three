@@ -1,17 +1,12 @@
-import { BoxGeometry, Mesh, MeshStandardMaterial } from 'three';
+import * as THREE from 'three';
 
 function createCube() {
-  const geometry = new BoxGeometry(2, 2, 2);
+  const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+  const material = new THREE.MeshNormalMaterial();
 
-  // Switch the old "basic" material to
-  // a physically correct "standard" material
-  const material = new MeshStandardMaterial({ color: 'purple' });
+  const mesh = new THREE.Mesh(geometry, material);
 
-  const cube = new Mesh(geometry, material);
-
-  cube.rotation.set(-0.5, -0.1, 0.8);
-
-  return cube;
+  return mesh;
 }
 
 export { createCube };
